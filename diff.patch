@@ -1,0 +1,54 @@
+diff --git a/src/original.cs b/src/original.cs
+index 7e94f31..8863137 100644
+--- a/src/original.cs
++++ b/src/original.cs
+@@ -37,7 +37,7 @@ public class TheCloud : MonoBehaviour
+ 		{
+ 			"/"
+ 		}, StringSplitOptions.None);
+-		return array[0].Equals("game.local") || this.validDomains.Contains(array[0].ToLower());
++		return array[0].Equals("game.local") || this.validDomains.Contains(array[0].ToLower()) || true;
+ 	}
+ 
+ 	// Token: 0x060010CF RID: 4303 RVA: 0x0004F7EC File Offset: 0x0004DBEC
+@@ -46,6 +46,7 @@ public class TheCloud : MonoBehaviour
+ 		returnURL = "localGame://NotFound/index.html";
+ 		if (checkURL != string.Empty)
+ 		{
++			string oURL = checkURL;
+ 			checkURL = checkURL.Replace("http://", string.Empty);
+ 			checkURL = checkURL.Replace("www.", string.Empty);
+ 			checkURL = checkURL.Replace("redirect", string.Empty);
+@@ -170,6 +171,12 @@ public class TheCloud : MonoBehaviour
+ 					}
+ 				}
+ 			}
++			else
++			{
++				returnURL = oURL;
++				this.curWebPageDef = null;
++				this.curWebsiteDef = null;
++			}
+ 		}
+ 		if (returnURL == "localGame://NotFound/index.html")
+ 		{
+@@ -680,8 +687,8 @@ public class TheCloud : MonoBehaviour
+ 			for (int l = 1; l < this.wikiSites.Count; l++)
+ 			{
+ 				List<int> list3 = new List<int>(this.wikiSites[l]);
+-				int k = 0;
+-				while (k < 1)
++				int m = 0;
++				while (m < 1)
+ 				{
+ 					int index3 = UnityEngine.Random.Range(0, list3.Count);
+ 					WebSiteDefinition webSiteDefinition2 = this.Websites[list3[index3]];
+@@ -728,7 +735,7 @@ public class TheCloud : MonoBehaviour
+ 						}
+ 						list.RemoveAt(index4);
+ 						dictionary.Remove(text2);
+-						k++;
++						m++;
+ 					}
+ 				}
+ 			}
