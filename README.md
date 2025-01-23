@@ -23,6 +23,10 @@ This is a mod/patch for the game "Welcome to the Game 2" that unblocks all websi
 
   ![image](https://github.com/user-attachments/assets/ddaf3450-c6cd-4886-948e-e4655f42a12b)
 
+- compile (leave all fields default. no not keep signatures)
+- done.
+- yay.
+
 ---
 
 ## Todo
