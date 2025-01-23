@@ -8,7 +8,7 @@ using ZenFulcrum.EmbeddedBrowser;
 public class TheCloud : MonoBehaviour
 {
 	// Token: 0x170000E5 RID: 229
-	// (get) Token: 0x060010CC RID: 4300
+	// (get) Token: 0x060010CC RID: 4300 RVA: 0x0004F727 File Offset: 0x0004DB27
 	public string MasterKey
 	{
 		get
@@ -17,7 +17,7 @@ public class TheCloud : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010CD RID: 4301
+	// Token: 0x060010CD RID: 4301 RVA: 0x0004F72F File Offset: 0x0004DB2F
 	public void InvalidURL(out string ReturnURL)
 	{
 		ReturnURL = "localGame://NotFound/index.html";
@@ -25,7 +25,7 @@ public class TheCloud : MonoBehaviour
 		this.curWebsiteDef = null;
 	}
 
-	// Token: 0x060010CE RID: 4302
+	// Token: 0x060010CE RID: 4302 RVA: 0x0004F748 File Offset: 0x0004DB48
 	public bool SoftValidateURL(out string returnURL, string checkURL = "")
 	{
 		returnURL = "localGame://NotFound/index.html";
@@ -40,7 +40,7 @@ public class TheCloud : MonoBehaviour
 		return array[0].Equals("game.local") || this.validDomains.Contains(array[0].ToLower()) || true;
 	}
 
-	// Token: 0x060010CF RID: 4303
+	// Token: 0x060010CF RID: 4303 RVA: 0x0004F7EC File Offset: 0x0004DBEC
 	public bool ValidateURL(out string returnURL, string checkURL = "")
 	{
 		returnURL = "localGame://NotFound/index.html";
@@ -200,20 +200,20 @@ public class TheCloud : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060010D0 RID: 4304
+	// Token: 0x060010D0 RID: 4304 RVA: 0x0004FE1C File Offset: 0x0004E21C
 	public void ClearCurrentWebDeff()
 	{
 		this.curWebsiteDef = null;
 		this.curWebPageDef = null;
 	}
 
-	// Token: 0x060010D1 RID: 4305
+	// Token: 0x060010D1 RID: 4305 RVA: 0x0004FE2C File Offset: 0x0004E22C
 	public WebPageDefinition GetCurrentWebPageDef()
 	{
 		return this.curWebPageDef;
 	}
 
-	// Token: 0x060010D2 RID: 4306
+	// Token: 0x060010D2 RID: 4306 RVA: 0x0004FE34 File Offset: 0x0004E234
 	public void GetCurrentPageSourceCode()
 	{
 		if (this.curWebsiteDef != null && this.curWebPageDef != null)
@@ -259,7 +259,7 @@ public class TheCloud : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010D3 RID: 4307
+	// Token: 0x060010D3 RID: 4307 RVA: 0x0004FFE0 File Offset: 0x0004E3E0
 	public bool TriggerBookMark()
 	{
 		if (!(this.curWebsiteDef != null) || !(this.curWebPageDef != null))
@@ -283,25 +283,25 @@ public class TheCloud : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060010D4 RID: 4308
+	// Token: 0x060010D4 RID: 4308 RVA: 0x0005011C File Offset: 0x0004E51C
 	public bool CheckToSeeIfPageIsBookMarked()
 	{
 		return this.curWebsiteDef != null && this.curWebPageDef != null && this.bookmarks.ContainsKey(this.curWebPageDef.GetHashCode());
 	}
 
-	// Token: 0x060010D5 RID: 4309
+	// Token: 0x060010D5 RID: 4309 RVA: 0x0005016B File Offset: 0x0004E56B
 	public bool CheckIfSiteWasTapped()
 	{
 		return this.curWebPageDef != null && this.curWebPageDef.IsTapped;
 	}
 
-	// Token: 0x060010D6 RID: 4310
+	// Token: 0x060010D6 RID: 4310 RVA: 0x00050193 File Offset: 0x0004E593
 	public bool CheckIfWiki()
 	{
 		return this.curWebsiteDef != null && this.wikiLookUp.ContainsKey(this.curWebsiteDef.PageURL);
 	}
 
-	// Token: 0x060010D7 RID: 4311
+	// Token: 0x060010D7 RID: 4311 RVA: 0x000501C8 File Offset: 0x0004E5C8
 	public JSONNode BuildCurrentWiki()
 	{
 		List<JSONNode> list = new List<JSONNode>(20);
@@ -334,7 +334,7 @@ public class TheCloud : MonoBehaviour
 		return new JSONNode(list);
 	}
 
-	// Token: 0x060010D8 RID: 4312
+	// Token: 0x060010D8 RID: 4312 RVA: 0x00050300 File Offset: 0x0004E700
 	public string GetWikiURL(int WikiIndex)
 	{
 		string result = string.Empty;
@@ -345,7 +345,7 @@ public class TheCloud : MonoBehaviour
 		return result;
 	}
 
-	// Token: 0x060010D9 RID: 4313
+	// Token: 0x060010D9 RID: 4313 RVA: 0x0005034C File Offset: 0x0004E74C
 	public void ForceKeyDiscover()
 	{
 		if (this.KeyDiscoveredEvent != null)
@@ -354,7 +354,7 @@ public class TheCloud : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010DA RID: 4314
+	// Token: 0x060010DA RID: 4314 RVA: 0x00050364 File Offset: 0x0004E764
 	private void prepTheMasterKey()
 	{
 		this.myMasterKeyData = DataManager.Load<MasterKeyData>(1010);
@@ -384,7 +384,7 @@ public class TheCloud : MonoBehaviour
 		DataManager.Save<MasterKeyData>(this.myMasterKeyData);
 	}
 
-	// Token: 0x060010DB RID: 4315
+	// Token: 0x060010DB RID: 4315 RVA: 0x000504A0 File Offset: 0x0004E8A0
 	private void prepWikis()
 	{
 		this.myWikiSiteData = DataManager.Load<WikiSiteData>(1919);
@@ -519,7 +519,7 @@ public class TheCloud : MonoBehaviour
 		DataManager.Save<WikiSiteData>(this.myWikiSiteData);
 	}
 
-	// Token: 0x060010DC RID: 4316
+	// Token: 0x060010DC RID: 4316 RVA: 0x00050AC8 File Offset: 0x0004EEC8
 	private void prepWebsites()
 	{
 		this.myWebSitesData = DataManager.Load<WebSitesData>(2020);
@@ -596,7 +596,7 @@ public class TheCloud : MonoBehaviour
 		DataManager.Save<WebSitesData>(this.myWebSitesData);
 	}
 
-	// Token: 0x060010DD RID: 4317
+	// Token: 0x060010DD RID: 4317 RVA: 0x00051038 File Offset: 0x0004F438
 	private void prepBookmarks()
 	{
 		this.myBookMarksData = DataManager.Load<BookMarksData>(2021);
@@ -617,7 +617,7 @@ public class TheCloud : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010DE RID: 4318
+	// Token: 0x060010DE RID: 4318 RVA: 0x00051168 File Offset: 0x0004F568
 	private void tapSites()
 	{
 		if (this.itsNewATap)
@@ -743,7 +743,7 @@ public class TheCloud : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010DF RID: 4319
+	// Token: 0x060010DF RID: 4319 RVA: 0x000518AB File Offset: 0x0004FCAB
 	private void stageMe()
 	{
 		GameManager.StageManager.Stage -= this.stageMe;
@@ -754,7 +754,7 @@ public class TheCloud : MonoBehaviour
 		this.tapSites();
 	}
 
-	// Token: 0x060010E0 RID: 4320
+	// Token: 0x060010E0 RID: 4320 RVA: 0x000518E4 File Offset: 0x0004FCE4
 	private void Awake()
 	{
 		GameManager.TheCloud = this;
@@ -764,7 +764,7 @@ public class TheCloud : MonoBehaviour
 		GameManager.StageManager.Stage += this.stageMe;
 	}
 
-	// Token: 0x060010E1 RID: 4321
+	// Token: 0x060010E1 RID: 4321 RVA: 0x0005193D File Offset: 0x0004FD3D
 	private void Update()
 	{
 		if (this.rollCoolDownActive && Time.time - this.rollTimeStamp >= 30f)
